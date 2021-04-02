@@ -1,0 +1,18 @@
+# Простой make-file без переменных, для релиза и дебага
+
+.Фальшивый: все отладочные релизы чистые
+
+все: отладочный релиз
+
+отладка: hello-dbg
+
+привет-dbg: hello.cpp
+ g++ -g -O0 hello.cpp -o hello-dbg -Wall
+
+релиз: привет
+
+Здравствуйте: hello.cpp
+ g++ -O2 hello.cpp -О привет -DNDEBUG -Wall
+
+чистый:
+ rm -rf hello hello-dbg
